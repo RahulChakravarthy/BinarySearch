@@ -48,7 +48,7 @@ class SearchAlg {
 
 		void SortList(){
 			//Sort using simple bubble sort to sort the newly made list
-			for (int i = 0; i < (*this).size - 1; i++){
+			for (int i = 0; i < (*this).size-1; i++){
 				for (int q = 0; q < (*this).size; q++){
 					if ((*this).SearchList[q + 1] < (*this).SearchList[q]){
 						int temp = (*this).SearchList[q+1];
@@ -111,18 +111,6 @@ class SearchAlg {
 		}
 };
 
-//Sortable class using SearchAlg parent sorting Class
-class SortingWords : public SearchAlg {
-	private:
-		char* Word;
-
-
-	public:
-		SortingWords(){
-			
-		}
-
-}
 
 int main(){
 	//Implementing a clock system to measure how fast this binary search is
@@ -130,7 +118,7 @@ int main(){
 	double duration;
 	start = clock();
 
-	SearchAlg BinaryList(30000, 99);
+	SearchAlg BinaryList(300000, 99);
 	BinaryList.GenerateRandomList();
 	//BinaryList.printList();
 	cout << "The randomized Number of interest in the randomly generated List is located at index value: " << BinaryList.Query() << endl;
