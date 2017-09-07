@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Math.h>
+#include "Mergesort.h"
 //Practicing the Mergesort algorithm to use it in the Binary Search
 //WARNING THIS IS JUST THE SOURCECODE FOR THE LIBRARY IT DOES NOT CONTAIN A MAIN METHOD
 using namespace std;
@@ -20,11 +21,6 @@ appropriate. Once that value has been selected, iterate to the next element in t
 */
 
 // Update 1.0: this version is only compatible with integers, update it using templates to increase its usability
-
-//forward declaration
-int* MergeSortedAscending(int* UnsortedArray_A, int size_A, int* UnsortedArray_B, int size_B, int* concatArray, int concatArraySize);
-int* Mergesort(int* UnsortedArray, double size);
-void print(int* array, double size);
 
 //Creates merged array sorted in ascending order
 int* MergeSortedAscending(int* UnsortedArray_A, int size_A, int* UnsortedArray_B, int size_B, int* concatArray, int concatArraySize){
@@ -54,7 +50,6 @@ int* MergeSortedAscending(int* UnsortedArray_A, int size_A, int* UnsortedArray_B
 			A_iterator++;
 		}
 	}
-	cout << "MERGING..." << endl;
 	print(UnsortedArray_A,size_A);
 	print(UnsortedArray_B,size_B);
 	print(concatArray, concatArraySize);
@@ -63,7 +58,6 @@ int* MergeSortedAscending(int* UnsortedArray_A, int size_A, int* UnsortedArray_B
 
 //Mergesort Method
 int* Mergesort(int* UnsortedArray, double size){
-	cout << "PARTITIONING..." << endl;
 	print(UnsortedArray,size);
 	if (size == 1){
 		return UnsortedArray;
@@ -79,12 +73,4 @@ void print(int* array, double size){
 		cout << array[i] << " ";
 	}
 	cout << endl;
-}
-
-//Main method for debugging
-int main(){
-
-	int Array[5] = {1,5,3,25,14};
-
-	print(Mergesort(Array,5),5);
 }

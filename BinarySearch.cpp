@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
-// REMEMBER IN C++ YOU CAN INHERIT FROM MULTIPLE CLASSES
+#include "Mergesort.h"
 using namespace std;
 //Playing around with Binary Search Algorithms
 //Update program works, speed is bottenecked by bubble sort algorithm
@@ -47,16 +47,8 @@ class SearchAlg {
 
 
 		void SortList(){
-			//Sort using simple bubble sort to sort the newly made list
-			for (int i = 0; i < (*this).size-1; i++){
-				for (int q = 0; q < (*this).size; q++){
-					if ((*this).SearchList[q + 1] < (*this).SearchList[q]){
-						int temp = (*this).SearchList[q+1];
-						(*this).SearchList[q+1] = (*this).SearchList[q];
-						(*this).SearchList[q] = temp;
-					}
-				}
-			}
+			//Sort using mergesort algorithm
+			(*this).SearchList = Mergesort((*this).SearchList, (*this).size);
 		}
 
 		void GenerateRandomList(){
